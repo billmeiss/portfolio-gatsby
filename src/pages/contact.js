@@ -2,76 +2,28 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import me from "../images/picture-me.jpg";
 
 function ContactPage() {
   return (
-    <Layout>
+    <Layout title="Contact">
       <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        keywords={[`developer`, `tailwind`, `react`, `tailwindcss`]}
         title="Contact"
       />
-      <section>
-        <form className="mx-auto md:w-1/2">
-          <p className="mb-8 leading-loose">
-            Here is an example of a form built using the official Tailwind CSS
-            Custom Forms plugin.{` `}
-            <a
-              className="font-bold text-gray-700 no-underline"
-              href="https://github.com/tailwindcss/custom-forms"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read the docs
+      <section className="flex flex-col sm:flex-row md:flex-row lg:flex-row -mt-5">
+        <div className="sm:w-64 md:w-64 lg:w-64 h-64 w-full max-w-xs">
+          <img src={me} className="border-b-8" />
+        </div>
+        <div className="lg:m-10 lg:p-5 md:m-10 md:p-5 sm:m-10 sm:p-5 mt-16 bg-gray-100 border-b-8 text-center max-w-xs">
+          <p className="font-semibold">
+            You can reach out to me at
+            <a target="_blank" className="flex justify-center" href={"https://www.linkedin.com/in/stefan-gazzana-17a102141"}>
+              <svg className="mt-3 mb-3 h-12 w-12" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
-            .
+            or at stefangazzana@gmail.com
           </p>
-
-          <label
-            className="block mb-2 text-xs font-bold uppercase"
-            htmlFor="first-name"
-          >
-            First Name
-          </label>
-
-          <input
-            className="w-full mb-6 form-input"
-            id="first-name"
-            placeholder="Bill"
-            type="text"
-          />
-
-          <label
-            className="block mb-2 text-xs font-bold uppercase"
-            htmlFor="last-name"
-          >
-            Last Name
-          </label>
-
-          <input
-            className="w-full mb-6 form-input"
-            id="last-name"
-            placeholder="Murray"
-            type="text"
-          />
-
-          <label
-            className="block mb-2 text-xs font-bold uppercase"
-            htmlFor="message"
-          >
-            Message
-          </label>
-
-          <textarea
-            className="w-full mb-6 form-textarea"
-            id="message"
-            placeholder="Say something..."
-            rows="8"
-          />
-
-          <button className="px-4 py-2 text-sm font-bold text-white bg-gray-700 border-b-4 border-gray-800 rounded hover:border-gray-700 hover:bg-gray-600">
-            Submit
-          </button>
-        </form>
+        </div>
       </section>
     </Layout>
   );
