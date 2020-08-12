@@ -1,19 +1,9 @@
-// import { graphql, useStaticQuery } from "gatsby";
 import React, { useState } from "react";
 import { Link } from "gatsby";
 
 import me from "../images/picture-me.jpg"
 
 function Header({ title }) {
-  // const { site } = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `);
 
   const [isExpanded, setIsExpanded] = useState(true)
 
@@ -39,6 +29,7 @@ function Header({ title }) {
               <img className="block mt-1 border ml-5 h-12 w-12 bg-cover rounded-full shadow-inner md:hidden lg:hidden" src={me} alt="Stefan's Avatar" />
               <p className="hidden text-purple-700 font-bold text-lg px-10 py-3 md:block lg:block h-8 w-auto">stefan.website</p>
             </div>
+              {/* Desktop Nav */}
               <div className="hidden px-10 ml-10 md:block sm:block lg:block">
                 <div className="flex">
                   {title === "Home" ? <Link to="/" className="ml-10 px-3 py-4 text-md font-medium leading-5 border-purple-600 border-b-2 text-gray-700 hover:text-gray-800 focus:text-gray-900 transition duration-150 ease-in-out">
@@ -68,6 +59,7 @@ function Header({ title }) {
           </div>
         </div>
 
+        {/* Mobile NavBar */}
         {isExpanded ? 
           <div className="block sm:hidden md:hidden lg:hidden">
             <div className="px-2 pt-2 pb-3">
