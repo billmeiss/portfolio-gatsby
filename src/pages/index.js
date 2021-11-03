@@ -21,15 +21,15 @@ function IndexPage() {
         />
 
         <div className="flex flex-col">
-          <h2 className="p-3 text-2xl font-bold">Hey Mate!</h2>
-          <h2 className="inline-block p-3 mb-4 text-2xl font-bold bg-yellow-400 border-b-8">
-            I&apos;m Stefan, a full-stack developer living in beautiful Sydney.
+          <h2 className="p-3 text-2xl font-bold">Hey incredible people!</h2>
+          <h2 className="inline-block p-3 mb-4 text-2xl text-gray-100 font-bold bg-purple-600 border-b-8">
+            I&apos;m Stefan, a full-stack developer living in the heart of Australia.
           </h2>
         </div>
 
         <div className="py-3 font-semibold text-gray-800">
           <p className="leading-loose">
-            I currently speak in Javascript, my vocabulary extending to frameworks like Node.js and React.js.
+            My favourite language is Javascript, my vocabulary extending to frameworks like Node.js and React.js.
           </p>
           <p className="leading-loose">
             Check out some <Link to="/projects" className="text-gray-800 font-bold">projects</Link> I&apos;ve worked on recently.
