@@ -3,7 +3,7 @@ title: Paiid
 date: "2021-08-25T22:12:03.284Z"
 description: "An app allowing casual workers to track their pay"
 github: null
-demo: "https://paiid.org/"
+demo: "https://payed.vercel.app/"
 ---
 
 > Paiid is a web app allowing casual workers to track their pay.

@@ -3,7 +3,7 @@ title: ATAR Calculator
 date: "2020-12-11T22:12:03.284Z"
 description: "A static site created with Gatsby"
 github: null
-demo: "https://calcatar.com/"
+demo: "https://atar-calc.vercel.app/"
 ---
 
 > My ATAR Calculator's algorithm was built from scratch using JS. The app was 

@@ -3,7 +3,7 @@ title: ATAR Doctor
 date: "2020-10-25T22:12:03.284Z"
 description: "A static site created with Gatsby"
 github: null
-demo: "https://atardoctor.org/"
+demo: "https://www.atardoctor.org/"
 ---
 
 > ATAR Doctor is a tutoring network for recent high school graduates in Sydney, Australia. 

@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import developerIllustration from "../images/developer-illustration.svg";
 
-function IndexPage() {
+function IndexPage({ data }) {
+  const posts = data.allMarkdownRemark.edges;
+
   return (
     <Layout title="Home">
       <SEO
@@ -14,30 +15,53 @@ function IndexPage() {
       />
 
       <section className="text-center">
-        <img
-          alt="Cat and human sitting on a couch"
-          className="block w-full sm:w-3/5 md:w-2/5 lg:w-2/5 mx-auto -mt-2 mb-8"
-          src={developerIllustration}
-        />
-
-        <div className="flex flex-col">
-          <h2 className="p-3 text-2xl font-bold">Hey incredible people!</h2>
-          <h2 className="inline-block p-3 mb-4 text-2xl text-gray-100 font-bold bg-purple-600 border-b-8">
-            I&apos;m Stefan, a full-stack developer living in the heart of Australia.
-          </h2>
-        </div>
-
-        <div className="py-3 font-semibold text-gray-800">
-          <p className="leading-loose">
-            My favourite language is Javascript, my vocabulary extending to frameworks like Node.js and React.js.
-          </p>
-          <p className="leading-loose">
-            Check out some <Link to="/projects" className="text-gray-800 font-bold">projects</Link> I&apos;ve worked on recently.
-          </p>
-        </div>
+        <h2 className="font-semibold text-md text-gray-800 leading-loose">
+          I&apos;m Stefan, a product minded developer based in Australia.
+        </h2>
+        <p className="py-3 text-sm font-semibold text-gray-800 leading-loose mb-5">
+          I work across the stack, but tend to lean to the front end since I
+          love seeing the product build before my eyes!
+        </p>
       </section>
+      {posts.map(({ node }) => {
+        const title = node.frontmatter.title || node.fields.slug;
+        return (
+          <article
+            key={node.fields.slug}
+            className="mb-3 p-6 bg-gray-100 rounded-lg hover:shadow-lg hover:text-gray-900 hover:border-gray-900"
+          >
+            <header>
+              <h3 className="text-xl sm:text-4xl md:text-4xl lg:text-4xl font-bold">
+                <Link to={node.fields.slug}>{title}</Link>
+              </h3>
+              <small className="text-md font-medium text-gray-800 mb-1">
+                {node.frontmatter.date}
+              </small>
+            </header>
+          </article>
+        );
+      })}
     </Layout>
   );
 }
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`;
