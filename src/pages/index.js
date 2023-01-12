@@ -26,19 +26,18 @@ function IndexPage({ data }) {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
-          <article
-            key={node.fields.slug}
-            className="mb-3 p-6 bg-gray-100 rounded-lg hover:shadow-lg hover:text-gray-900 hover:border-gray-900"
-          >
-            <header>
-              <h3 className="text-xl sm:text-4xl md:text-4xl lg:text-4xl font-bold">
-                <Link to={node.fields.slug}>{title}</Link>
-              </h3>
-              <small className="text-md font-medium text-gray-800 mb-1">
-                {node.frontmatter.date}
-              </small>
-            </header>
-          </article>
+          <Link key={node.fields.slug} to={node.fields.slug}>
+            <article className="mb-3 p-6 bg-gray-100 rounded-lg hover:shadow-lg hover:text-gray-900 hover:border-gray-900">
+              <header>
+                <h3 className="text-xl sm:text-4xl md:text-4xl lg:text-4xl font-bold">
+                  {title}
+                </h3>
+                <small className="text-md font-medium text-gray-800 mb-1">
+                  {node.frontmatter.date}
+                </small>
+              </header>
+            </article>
+          </Link>
         );
       })}
     </Layout>
